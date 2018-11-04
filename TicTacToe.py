@@ -32,6 +32,8 @@ def check_move_is_valid(num, turn, board):
 
     if num == "r" or num == "rules":
         show_rules()
+        print_board(board)
+        return False
     elif int(num) not in range(0,10):
         print('This is not a legal move, if you wish to see the rules again just type "rules" or "r"')
         return False
