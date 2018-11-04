@@ -81,11 +81,7 @@ def is_game_stalemate(board):
     return True
 
 
-def print_winner(turn):
-    print(f"The winner is {turn}!")
-
-
-def play(board, turn):
+def play_a_game(board, turn):
     
     print("Now, let's start!")
 
@@ -96,7 +92,7 @@ def play(board, turn):
         if check_move_is_valid(num, turn, board):
             if is_game_complete(board):
                 print_board(board)
-                print_winner(turn)
+                print(f"The winner is {turn}!")
                 break
             elif is_game_stalemate(board):
                 print_board(board)
@@ -127,7 +123,7 @@ def main():
         board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
         turn = "x"
 
-        play(board, turn)
+        play_a_game(board, turn)
 
         continue_play = play_again()
 
