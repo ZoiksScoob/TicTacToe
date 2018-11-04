@@ -23,7 +23,7 @@ def show_rules():
     print_board(rules_board)
 
 
-def check_valid_move(num, turn, board):
+def check_move_is_valid(num, turn, board):
     input_mapping = {
         "1": (0,0), "2": (0,1), "3": (0,2), 
         "4": (1,0), "5": (1,1), "6": (1,2),
@@ -93,7 +93,7 @@ def play(board, turn):
     while True:
         num = input(f"Which position '{turn}'?' ")
 
-        if check_valid_move(num, turn, board):
+        if check_move_is_valid(num, turn, board):
             if is_game_complete(board):
                 print_board(board)
                 print_winner(turn)
