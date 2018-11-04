@@ -45,14 +45,11 @@ def check_move_is_valid(num, turn, board):
         return True
 
 
-def next_turn(turn, board):
+def next_turn(turn):
     if turn == "x":
         turn = "o"
     else:
         turn = "x" 
-
-    print(f"It's your turn now {turn}")
-    print_board(board)
 
     return turn
 
@@ -89,11 +86,12 @@ def print_winner(turn):
 
 
 def play(board, turn):
-    print_board(board)
-    print("Now, let's start! The first to play is 'x'")
+    
+    print("Now, let's start!")
 
-    while True:
-        num = input(f"Which position '{turn}'?' ")
+    while True: 
+        print_board(board)
+        num = input(f"It's your turn '{turn}', which position?' ")
 
         if check_move_is_valid(num, turn, board):
             if is_game_complete(board):
@@ -105,7 +103,7 @@ def play(board, turn):
                 print("Looks like it's a draw..")
                 break
             else:
-                turn = next_turn(turn, board)
+                turn = next_turn(turn)
 
 
 def play_again():
