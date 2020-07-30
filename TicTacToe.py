@@ -70,7 +70,7 @@ def is_game_complete(board):
         if board[0][i] != " " and (board[0][i] == board[1][i] == board[2][i]):
             return True
         
-        if {"x", "o"}.issubset(set(board[0][i], board[1][i], board[2][i])):
+        if {"x", "o"}.issubset({board[0][i], board[1][i], board[2][i]}):
             track += 1
 
     # check diagonals
